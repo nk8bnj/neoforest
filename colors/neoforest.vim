@@ -987,6 +987,14 @@ call neoforest#highlight('deniteStatusLineNumber', s:palette.purple, s:palette.b
 call neoforest#highlight('deniteStatusLinePath', s:palette.fg, s:palette.bg3)
 highlight! link deniteSelectedLin Green
 " }}}
+" kien/ctrlp.vim {{{
+call neoforest#highlight('CtrlPMatch', s:palette.green, s:palette.none, 'bold')
+call neoforest#highlight('CtrlPPrtBase', s:palette.bg3, s:palette.none)
+call neoforest#highlight('CtrlPLinePre', s:palette.bg3, s:palette.none)
+call neoforest#highlight('CtrlPMode1', s:palette.blue, s:palette.bg3, 'bold')
+call neoforest#highlight('CtrlPMode2', s:palette.bg0, s:palette.blue, 'bold')
+call neoforest#highlight('CtrlPStats', s:palette.grey1, s:palette.bg3, 'bold')
+highlight! link CtrlPNoEntries Red
 highlight! link CtrlPPrtCursor Blue
 " }}}
 " airblade/vim-gitgutter {{{
@@ -1450,6 +1458,14 @@ highlight! link NeotestSkipped BlueSign
 " }}}
 endif
 " }}}
+" Extended File Types: {{{
+" Whitelist: {{{ File type optimizations that will always be loaded.
+" diff {{{
+highlight! link diffAdded Green
+highlight! link diffRemoved Red
+highlight! link diffChanged Blue
+highlight! link diffOldFile Yellow
+highlight! link diffNewFile Orange
 highlight! link diffFile Aqua
 highlight! link diffLine Grey
 highlight! link diffIndexLine Purple
@@ -1473,6 +1489,14 @@ else
     finish
   endif
 endif
+" syn_begin: vim-plug {{{
+" https://github.com/junegunn/vim-plug
+call neoforest#highlight('plug1', s:palette.orange, s:palette.none, 'bold')
+call neoforest#highlight('plugNumber', s:palette.yellow, s:palette.none, 'bold')
+highlight! link plug2 Green
+highlight! link plugBracket Grey
+highlight! link plugName Aqua
+highlight! link plugDash Orange
 highlight! link plugError Red
 highlight! link plugNotLoaded Grey
 highlight! link plugRelDate Grey
@@ -1484,6 +1508,14 @@ highlight! link plugDeleted Grey
 highlight! link plugEdge Yellow
 highlight! link plugSha Green
 " syn_end }}}
+" syn_begin: packer {{{
+" https://github.com/wbthomason/packer.nvim
+highlight! link packerSuccess Aqua
+highlight! link packerFail Red
+highlight! link packerStatusSuccess Fg
+highlight! link packerStatusFail Fg
+highlight! link packerWorking Yellow
+highlight! link packerString Yellow
 highlight! link packerPackageNotLoaded Grey
 highlight! link packerRelDate Grey
 highlight! link packerPackageName Green
@@ -1494,6 +1526,22 @@ highlight! link packerTimeHigh Red
 highlight! link packerTimeMedium Yellow
 highlight! link packerTimeLow Green
 " syn_end }}}
+" syn_begin: coctree {{{
+" https://github.com/neoclide/coc.nvim
+highlight! link CocTreeOpenClose Aqua
+highlight! link CocTreeDescription Grey
+for kind in g:neoforest_lsp_kind_color
+  execute "highlight! link CocSymbol" . kind[0] . " " . kind[1]
+endfor
+" syn_end }}}
+" syn_begin: coc-explorer {{{
+" https://github.com/weirongxu/coc-explorer
+highlight! link CocExplorerBufferRoot Orange
+highlight! link CocExplorerBufferExpandIcon Aqua
+highlight! link CocExplorerBufferBufnr Purple
+highlight! link CocExplorerBufferModified Yellow
+highlight! link CocExplorerBufferReadonly Red
+highlight! link CocExplorerBufferBufname Grey
 highlight! link CocExplorerBufferFullpath Grey
 highlight! link CocExplorerFileRoot Orange
 highlight! link CocExplorerFileRootName Green
@@ -1527,8 +1575,24 @@ highlight! link CocExplorerDiagnosticError Red
 highlight! link CocExplorerDiagnosticWarning Yellow
 highlight! link CocExplorerFileHidden Grey
 " syn_end }}}
+" syn_begin: tagbar {{{
+" https://github.com/majutsushi/tagbar
+highlight! link TagbarFoldIcon Green
+highlight! link TagbarSignature Green
+highlight! link TagbarKind Red
+highlight! link TagbarScope Orange
+highlight! link TagbarNestedKind Aqua
+highlight! link TagbarVisibilityPrivate Red
 highlight! link TagbarVisibilityPublic Blue
 " syn_end }}}
+" syn_begin: vista/vista_kind/vista_markdown {{{
+" https://github.com/liuchengxu/vista.vim
+highlight! link VistaBracket Grey
+highlight! link VistaChildrenNr Orange
+highlight! link VistaScope Red
+highlight! link VistaTag Green
+highlight! link VistaPrefix Grey
+highlight! link VistaIcon Orange
 highlight! link VistaScopeKind Yellow
 highlight! link VistaColon Grey
 highlight! link VistaLineNr Grey
@@ -1537,10 +1601,26 @@ highlight! link VistaPublic Green
 highlight! link VistaProtected Yellow
 highlight! link VistaPrivate Red
 " syn_end }}}
+" syn_begin: Outline {{{
+" https://github.com/simrat39/symbols-outline.nvim
+highlight! link FocusedSymbol NormalFloat
+" syn_end }}}
+" syn_begin: aerial {{{
+" https://github.com/stevearc/aerial.nvim
+highlight! link AerialLine CursorLine
+highlight! link AerialGuide LineNr
 for kind in g:neoforest_lsp_kind_color
   execute "highlight! link Aerial" . kind[0] . "Icon " . kind[1]
 endfor
 " syn_end }}}
+" syn_begin: nerdtree {{{
+" https://github.com/preservim/nerdtree
+highlight! link NERDTreeDir Green
+highlight! link NERDTreeDirSlash Aqua
+highlight! link NERDTreeOpenable Orange
+highlight! link NERDTreeClosable Orange
+highlight! link NERDTreeFile Fg
+highlight! link NERDTreeExecFile Yellow
 highlight! link NERDTreeUp Grey
 highlight! link NERDTreeCWD Aqua
 highlight! link NERDTreeHelp LightGrey
@@ -1550,6 +1630,14 @@ highlight! link NERDTreeFlags Orange
 highlight! link NERDTreeLinkFile Grey
 highlight! link NERDTreeLinkTarget Green
 " syn_end }}}
+" syn_begin: dirvish {{{
+" https://github.com/justinmk/vim-dirvish
+highlight! link DirvishPathTail Aqua
+highlight! link DirvishArg Yellow
+" syn_end }}}
+" syn_begin: NvimTree {{{
+" https://github.com/kyazdani42/nvim-tree.lua
+if !s:configuration.transparent_background
   call neoforest#highlight('NvimTreeNormal', s:palette.fg, s:palette.bg_dim)
   call neoforest#highlight('NvimTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
   call neoforest#highlight('NvimTreeVertSplit', s:palette.bg0, s:palette.bg0)
@@ -1578,11 +1666,27 @@ highlight! link NvimTreeLspDiagnosticsWarning YellowSign
 highlight! link NvimTreeLspDiagnosticsInformation BlueSign
 highlight! link NvimTreeLspDiagnosticsHint GreenSign
 " syn_end }}}
+" syn_begin: fern {{{
+" https://github.com/lambdalisue/fern.vim
+highlight! link FernMarkedLine Purple
+highlight! link FernMarkedText Purple
+highlight! link FernRootSymbol FernRootText
+highlight! link FernRootText Orange
+highlight! link FernLeafSymbol FernLeafText
+highlight! link FernLeafText Fg
 highlight! link FernBranchSymbol FernBranchText
 highlight! link FernBranchText Green
 highlight! link FernWindowSelectIndicator TabLineSel
 highlight! link FernWindowSelectStatusLine TabLine
 " syn_end }}}
+" syn_begin: neo-tree {{{
+" https://github.com/nvim-neo-tree/neo-tree.nvim
+if !s:configuration.transparent_background
+  call neoforest#highlight('NeoTreeNormal', s:palette.statusline4, s:palette.bg_dim)
+  call neoforest#highlight('NeoTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
+  call neoforest#highlight('NeoTreeVertSplit', s:palette.bg0, s:palette.bg0)
+endif
+highlight! link NeoTreeDirectoryIcon FolderBG
 highlight! link NeoTreeGitAdded Green
 highlight! link NeoTreeGitConflict Yellow
 highlight! link NeoTreeGitDeleted Red
@@ -1597,6 +1701,14 @@ highlight! link NeoTreeNormalNC NeoTreeNormal
 highlight! link NeoTreeSignColumn NeoTreeNormal
 highlight! link NeoTreeRootName Title
 " syn_end }}}
+" syn_begin: octo {{{
+" https://github.com/pwntester/octo.nvim
+call neoforest#highlight('OctoViewer', s:palette.bg0, s:palette.blue)
+call neoforest#highlight('OctoGreenFloat', s:palette.green, s:palette.bg2)
+call neoforest#highlight('OctoRedFloat', s:palette.red, s:palette.bg2)
+call neoforest#highlight('OctoPurpleFloat', s:palette.purple, s:palette.bg2)
+call neoforest#highlight('OctoYellowFloat', s:palette.yellow, s:palette.bg2)
+call neoforest#highlight('OctoBlueFloat', s:palette.blue, s:palette.bg2)
 call neoforest#highlight('OctoGreyFloat', s:palette.grey1, s:palette.bg2)
 call neoforest#highlight('OctoBubbleGreen', s:palette.bg0, s:palette.green)
 call neoforest#highlight('OctoBubbleRed', s:palette.bg0, s:palette.red)
@@ -1617,22 +1729,62 @@ highlight! link OctoBubbleDelimiterYellow Yellow
 highlight! link OctoBubbleDelimiterBlue Blue
 highlight! link OctoBubbleDelimiterGrey Grey
 " syn_end }}}
+" syn_begin: netrw {{{
+" https://www.vim.org/scripts/script.php?script_id=1075
+highlight! link netrwDir Green
+highlight! link netrwClassify Green
+highlight! link netrwLink Grey
+highlight! link netrwSymLink Fg
+highlight! link netrwExe Yellow
+highlight! link netrwComment Grey
 highlight! link netrwList Aqua
 highlight! link netrwHelpCmd Blue
 highlight! link netrwCmdSep Grey
 highlight! link netrwVersion Orange
 " syn_end }}}
+" syn_begin: startify/quickmenu {{{
+" https://github.com/mhinz/vim-startify
+" https://github.com/skywind3000/quickmenu.vim
+highlight! link StartifyBracket Grey
+highlight! link StartifyFile Fg
+highlight! link StartifyNumber Orange
+highlight! link StartifyPath Green
+highlight! link StartifySlash Green
 highlight! link StartifySection Yellow
 highlight! link StartifyHeader Aqua
 highlight! link StartifySpecial Grey
 highlight! link StartifyFooter Grey
 " syn_end }}}
+" syn_begin: quickmenu {{{
+" https://github.com/skywind3000/quickmenu.vim
+highlight! link QuickmenuOption Green
+highlight! link QuickmenuNumber Red
+highlight! link QuickmenuBracket Grey
+highlight! link QuickmenuHelp Green
+highlight! link QuickmenuSpecial Purple
+highlight! link QuickmenuHeader Orange
 " syn_end }}}
+" syn_begin: undotree {{{
+" https://github.com/mbbill/undotree
+call neoforest#highlight('UndotreeSavedBig', s:palette.purple, s:palette.none, 'bold')
+highlight! link UndotreeNode Orange
+highlight! link UndotreeNodeCurrent Red
+highlight! link UndotreeSeq Green
+highlight! link UndotreeNext Blue
+highlight! link UndotreeTimeStamp Grey
 highlight! link UndotreeHead Yellow
 highlight! link UndotreeBranch Yellow
 highlight! link UndotreeCurrent Aqua
 highlight! link UndotreeSavedSmall Purple
 " syn_end }}}
+" syn_begin: NeogitStatus/NeogitCommitView {{{
+" https://github.com/TimUntersberger/neogit
+highlight! link NeogitNotificationInfo Blue
+highlight! link NeogitNotificationWarning Yellow
+highlight! link NeogitNotificationError Red
+highlight! link NeogitDiffAdd Green
+highlight! link NeogitDiffDelete Red
+highlight! link NeogitDiffContextHighlight CursorLine
 highlight! link NeogitHunkHeaderHighlight TabLine
 highlight! link NeogitHunkHeader TabLineFill
 highlight! link NeogitCommandCodeNormal Green
@@ -1640,6 +1792,22 @@ highlight! link NeogitCommandCodeError Red
 highlight! link NeogitCommitViewHeader diffIndexLine
 highlight! link NeogitFilePath diffFile
 " syn_end }}}
+" syn_begin: dashboard {{{
+" https://github.com/glepnir/dashboard-nvim
+highlight! link DashboardHeader Yellow
+highlight! link DashboardCenter Green
+highlight! link DashboardShortcut Red
+highlight! link DashboardFooter Orange
+" syn_end }}}
+" syn_begin: markdown {{{
+" builtin: {{{
+call neoforest#highlight('markdownH1', s:palette.red, s:palette.none, 'bold')
+call neoforest#highlight('markdownH2', s:palette.orange, s:palette.none, 'bold')
+call neoforest#highlight('markdownH3', s:palette.yellow, s:palette.none, 'bold')
+call neoforest#highlight('markdownH4', s:palette.green, s:palette.none, 'bold')
+call neoforest#highlight('markdownH5', s:palette.blue, s:palette.none, 'bold')
+call neoforest#highlight('markdownH6', s:palette.purple, s:palette.none, 'bold')
+call neoforest#highlight('markdownItalic', s:palette.none, s:palette.none, 'italic')
 call neoforest#highlight('markdownBold', s:palette.none, s:palette.none, 'bold')
 call neoforest#highlight('markdownItalicDelimiter', s:palette.grey1, s:palette.none, 'italic')
 highlight! link markdownUrl TSURI
@@ -1661,11 +1829,27 @@ highlight! link markdownIdDeclaration markdownLinkText
 highlight! link markdownBoldDelimiter Grey
 highlight! link markdownId Yellow
 " }}}
+" vim-markdown: https://github.com/gabrielelana/vim-markdown {{{
+call neoforest#highlight('mkdURL', s:palette.blue, s:palette.none, 'underline')
+call neoforest#highlight('mkdInlineURL', s:palette.purple, s:palette.none, 'underline')
+call neoforest#highlight('mkdItalic', s:palette.grey1, s:palette.none, 'italic')
+highlight! link mkdCodeDelimiter Aqua
+highlight! link mkdBold Grey
+highlight! link mkdLink Purple
+highlight! link mkdHeading Grey
 highlight! link mkdListItem Red
 highlight! link mkdRule Purple
 highlight! link mkdDelimiter Grey
 highlight! link mkdId Yellow
 " }}}
+" nvim-treesitter/nvim-treesitter {{{
+if has('nvim-0.8')
+  highlight! link @markup.heading.1.markdown markdownH1
+  highlight! link @markup.heading.2.markdown markdownH2
+  highlight! link @markup.heading.3.markdown markdownH3
+  highlight! link @markup.heading.4.markdown markdownH4
+  highlight! link @markup.heading.5.markdown markdownH5
+  highlight! link @markup.heading.6.markdown markdownH6
   highlight! link @markup.heading.1.marker.markdown @conceal
   highlight! link @markup.heading.2.marker.markdown @conceal
   highlight! link @markup.heading.3.marker.markdown @conceal
@@ -1679,6 +1863,14 @@ highlight! link mkdId Yellow
 endif
 " }}}
 " syn_end }}}
+" syn_begin: vimwiki {{{
+call neoforest#highlight('VimwikiHeader1', s:palette.red, s:palette.none, 'bold')
+call neoforest#highlight('VimwikiHeader2', s:palette.orange, s:palette.none, 'bold')
+call neoforest#highlight('VimwikiHeader3', s:palette.yellow, s:palette.none, 'bold')
+call neoforest#highlight('VimwikiHeader4', s:palette.green, s:palette.none, 'bold')
+call neoforest#highlight('VimwikiHeader5', s:palette.blue, s:palette.none, 'bold')
+call neoforest#highlight('VimwikiHeader6', s:palette.purple, s:palette.none, 'bold')
+call neoforest#highlight('VimwikiLink', s:palette.blue, s:palette.none, 'underline')
 call neoforest#highlight('VimwikiItalic', s:palette.none, s:palette.none, 'italic')
 call neoforest#highlight('VimwikiBold', s:palette.none, s:palette.none, 'bold')
 call neoforest#highlight('VimwikiUnderline', s:palette.none, s:palette.none, 'underline')
@@ -1692,10 +1884,34 @@ highlight! link VimwikiPre Green
 highlight! link VimwikiPreDelim Green
 highlight! link VimwikiNoExistsLink Red
 " syn_end }}}
+" syn_begin: rst {{{
+" builtin: https://github.com/marshallward/vim-restructuredtext {{{
+call neoforest#highlight('rstStandaloneHyperlink', s:palette.purple, s:palette.none, 'underline')
+highlight! link rstSubstitutionReference Blue
+highlight! link rstInterpretedTextOrHyperlinkReference Aqua
+highlight! link rstTableLines Grey
+" }}}
+" syn_end }}}
+" syn_begin: tex {{{
+" builtin: http://www.drchip.org/astronaut/vim/index.html#SYNTAX_TEX {{{
+highlight! link texStatement Green
+highlight! link texOnlyMath Grey
+highlight! link texDefName Yellow
+highlight! link texNewCmd Orange
+highlight! link texCmdName Blue
+highlight! link texBeginEnd Red
 highlight! link texBeginEndName Blue
 highlight! link texDocType Purple
 highlight! link texDocTypeArgs Orange
 " }}}
+" vimtex: https://github.com/lervag/vimtex {{{
+highlight! link texCmd Green
+highlight! link texCmdClass Purple
+highlight! link texCmdTitle Purple
+highlight! link texCmdAuthor Purple
+highlight! link texCmdPart Purple
+highlight! link texCmdBib Purple
+highlight! link texCmdPackage Yellow
 highlight! link texCmdNew Yellow
 highlight! link texArgNew Orange
 highlight! link texPartArgTitle BlueItalic
@@ -1706,6 +1922,14 @@ highlight! link texTitleArg BlueItalic
 highlight! link texAuthorArg BlueItalic
 " }}}
 " syn_end }}}
+" syn_begin: html/markdown/javascriptreact/typescriptreact {{{
+" builtin: https://notabug.org/jorgesumle/vim-html-syntax {{{
+call neoforest#highlight('htmlH1', s:palette.red, s:palette.none, 'bold')
+call neoforest#highlight('htmlH2', s:palette.orange, s:palette.none, 'bold')
+call neoforest#highlight('htmlH3', s:palette.yellow, s:palette.none, 'bold')
+call neoforest#highlight('htmlH4', s:palette.green, s:palette.none, 'bold')
+call neoforest#highlight('htmlH5', s:palette.blue, s:palette.none, 'bold')
+call neoforest#highlight('htmlH6', s:palette.purple, s:palette.none, 'bold')
 call neoforest#highlight('htmlLink', s:palette.none, s:palette.none, 'underline')
 call neoforest#highlight('htmlBold', s:palette.none, s:palette.none, 'bold')
 call neoforest#highlight('htmlBoldUnderline', s:palette.none, s:palette.none, 'bold,underline')
@@ -1722,12 +1946,36 @@ highlight! link htmlArg Aqua
 highlight! link htmlScriptTag Purple
 highlight! link htmlSpecialTagName RedItalic
 " }}}
+" nvim-treesitter/nvim-treesitter {{{
+highlight! link htmlTSText TSNone
+if has('nvim-0.8')
+  highlight! link @text.html htmlTSText
+endif
+" }}}
+" syn_end }}}
+" syn_begin: xml {{{
+" builtin: https://github.com/chrisbra/vim-xml-ftplugin {{{
+highlight! link xmlTag Green
+highlight! link xmlEndTag Blue
+highlight! link xmlTagName OrangeItalic
+highlight! link xmlEqual Orange
+highlight! link xmlAttrib Aqua
+highlight! link xmlEntity Red
+highlight! link xmlEntityPunct Red
 highlight! link xmlDocTypeDecl Grey
 highlight! link xmlDocTypeKeyword PurpleItalic
 highlight! link xmlCdataStart Grey
 highlight! link xmlCdataCdata Purple
 " }}}
 " syn_end }}}
+" syn_begin: css/scss/sass/less {{{
+" builtin: https://github.com/JulesWang/css.vim {{{
+highlight! link cssAttrComma Fg
+highlight! link cssBraces Fg
+highlight! link cssTagName PurpleItalic
+highlight! link cssClassNameDot Red
+highlight! link cssClassName RedItalic
+highlight! link cssFunctionName Yellow
 highlight! link cssAttr Orange
 highlight! link cssProp Aqua
 highlight! link cssCommonAttr Yellow
@@ -1748,6 +1996,78 @@ highlight! link cssValueTime Green
 highlight! link cssValueFrequency Green
 highlight! link cssVendor Grey
 highlight! link cssNoise Grey
+" }}}
+" syn_end }}}
+" syn_begin: scss {{{
+" scss-syntax: https://github.com/cakebaker/scss-syntax.vim {{{
+highlight! link scssMixinName Yellow
+highlight! link scssSelectorChar Red
+highlight! link scssSelectorName RedItalic
+highlight! link scssInterpolationDelimiter Green
+highlight! link scssVariableValue Green
+highlight! link scssNull Purple
+highlight! link scssBoolean Purple
+highlight! link scssVariableAssignment Grey
+highlight! link scssForKeyword PurpleItalic
+highlight! link scssAttribute Orange
+highlight! link scssFunctionName Yellow
+" }}}
+" syn_end }}}
+" syn_begin: sass {{{
+" builtin: {{{
+highlight! link sassProperty Aqua
+highlight! link sassAmpersand Orange
+highlight! link sassClass RedItalic
+highlight! link sassClassChar Red
+highlight! link sassMixing PurpleItalic
+highlight! link sassMixinName Orange
+highlight! link sassCssAttribute Yellow
+highlight! link sassInterpolationDelimiter Green
+highlight! link sassFunction Yellow
+highlight! link sassControl RedItalic
+highlight! link sassFor RedItalic
+highlight! link sassFunctionName Green
+" }}}
+" syn_end }}}
+" syn_begin: less {{{
+" vim-less: https://github.com/groenewege/vim-less {{{
+highlight! link lessMixinChar Grey
+highlight! link lessClass RedItalic
+highlight! link lessVariable Blue
+highlight! link lessAmpersandChar Orange
+highlight! link lessFunction Yellow
+" }}}
+" syn_end }}}
+" syn_begin: javascript/javascriptreact {{{
+" builtin: http://www.fleiner.com/vim/syntax/javascript.vim {{{
+highlight! link javaScriptNull Aqua
+highlight! link javaScriptNumber Number
+highlight! link javaScriptIdentifier Orange
+highlight! link javaScriptGlobal Purple
+highlight! link javaScriptMessage Yellow
+highlight! link javaScriptFunction Keyword
+highlight! link javaScriptOperator Orange
+highlight! link javaScriptMember Aqua
+" }}}
+" vim-javascript: https://github.com/pangloss/vim-javascript {{{
+highlight! link jsString Aqua
+highlight! link jsTemplateString jsString
+highlight! link jsThis Purple
+highlight! link jsUndefined Aqua
+highlight! link jsNull Aqua
+highlight! link jsNan Aqua
+highlight! link jsSuper Purple
+highlight! link jsPrototype Purple
+highlight! link jsFunction Keyword
+highlight! link jsGlobalNodeObjects Include
+highlight! link jsGlobalObjects Yellow
+highlight! link jsArrowFunction Purple
+highlight! link jsArrowFuncArgs Blue
+highlight! link jsFuncArgs Identifier
+highlight! link jsBlockLabel Aqua
+highlight! link jsClassDefinition Type
+highlight! link jsClassStringKey Aqua
+highlight! link jsDot Grey
 highlight! link jsObjectColon Grey
 highlight! link jsDestructuringBlock Blue
 highlight! link jsModuleKeyword Yellow
@@ -1755,9 +2075,25 @@ highlight! link jsTemplateExpression Yellow
 highlight! link jsTemplateBraces Yellow
 highlight! link jsClassMethodType Orange
 " }}}
+" nvim-treesitter/nvim-treesitter {{{
+highlight! link javascriptTSInclude Purple
+if has('nvim-0.8')
+  highlight! link @include.javascript javascriptTSInclude
+  highlight! link @keyword.import.javascript javascriptTSInclude
+endif
+if has('nvim-0.9')
+  highlight! link @lsp.typemod.variable.defaultLibrary.javascript TSConstBuiltin
   highlight! link @lsp.typemod.variable.defaultLibrary.javascriptreact TSConstBuiltin
 endif
 " }}}
+" yajs: https://github.com/othree/yajs.vim {{{
+highlight! link javascriptEndColons Fg
+highlight! link javascriptOpSymbol Orange
+highlight! link javascriptOpSymbols Orange
+highlight! link javascriptVariable Orange
+highlight! link javascriptObjectLabel Fg
+highlight! link javascriptObjectLabelColon Grey
+highlight! link javascriptPropertyNameString Aqua
 highlight! link javascriptFuncArg Blue
 highlight! link javascriptIdentifier Purple
 highlight! link javascriptArrowFunc Purple
@@ -1881,8 +2217,32 @@ highlight! link javascriptDataViewProp Aqua
 highlight! link javascriptBroadcastProp Aqua
 highlight! link javascriptMathStaticProp Aqua
 " }}}
+" vim-jsx-pretty: https://github.com/maxmellon/vim-jsx-pretty {{{
+highlight! link jsxTagName OrangeItalic
+highlight! link jsxOpenPunct Green
+highlight! link jsxClosePunct Blue
+highlight! link jsxEscapeJs Blue
+highlight! link jsxAttrib Aqua
+" }}}
+" syn_end }}}
+" syn_begin: typescript/typescriptreact {{{
+" vim-typescript: https://github.com/leafgarland/typescript-vim {{{
+highlight! link typescriptSource PurpleItalic
+highlight! link typescriptMessage Yellow
+highlight! link typescriptGlobalObjects Aqua
+highlight! link typescriptInterpolation Yellow
+highlight! link typescriptInterpolationDelimiter Yellow
+highlight! link typescriptBraces Fg
 highlight! link typescriptParens Fg
 " }}}
+" yats: https:github.com/HerringtonDarkholme/yats.vim {{{
+highlight! link typescriptMethodAccessor OrangeItalic
+highlight! link typescriptVariable Orange
+highlight! link typescriptVariableDeclaration Blue
+highlight! link typescriptTypeReference Yellow
+highlight! link typescriptBraces Fg
+highlight! link typescriptEnumKeyword RedItalic
+highlight! link typescriptEnum Yellow
 highlight! link typescriptIdentifierName Aqua
 highlight! link typescriptProp Aqua
 highlight! link typescriptCall Blue
