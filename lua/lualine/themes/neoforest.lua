@@ -22,12 +22,12 @@ return {
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
 	replace = {
-		a = { bg = palette.darkOrange[1], fg = palette.mainBlack[1], gui = "bold" },
+		a = { bg = palette.lightGrey[1], fg = palette.mainBlack[1], gui = "bold" },
 		b = { bg = palette.bg3[1], fg = palette.grey2[1] },
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
 	command = {
-		a = { bg = palette.lightGrey[1], fg = palette.mainBlack[1], gui = "bold" },
+		a = { bg = palette.darkOrange[1], fg = palette.mainBlack[1], gui = "bold" },
 		b = { bg = palette.bg3[1], fg = palette.grey2[1] },
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
