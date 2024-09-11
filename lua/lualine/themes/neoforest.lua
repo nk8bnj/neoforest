@@ -7,22 +7,22 @@ end
 
 return {
 	normal = {
-		a = { bg = palette.lightGrey[1], fg = palette.mainBlack[1], gui = "bold" },
+		a = { bg = palette.darkYellow[1], fg = palette.mainBlack[1], gui = "bold" },
 		b = { bg = palette.bg3[1], fg = palette.grey2[1] },
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
 	insert = {
-		a = { bg = palette.lightGrey[1], fg = palette.mainBlack[1], gui = "bold" },
+		a = { bg = palette.darkRed[1], fg = palette.mainBlack[1], gui = "bold" },
 		b = { bg = palette.bg3[1], fg = palette.grey2[1] },
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
 	visual = {
-		a = { bg = palette.lightGrey[1], fg = palette.mainBlack[1], gui = "bold" },
+		a = { bg = palette.darkBlue[1], fg = palette.mainBlack[1], gui = "bold" },
 		b = { bg = palette.bg3[1], fg = palette.grey2[1] },
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
 	replace = {
-		a = { bg = palette.lightGrey[1], fg = palette.mainBlack[1], gui = "bold" },
+		a = { bg = palette.darkOrange[1], fg = palette.mainBlack[1], gui = "bold" },
 		b = { bg = palette.bg3[1], fg = palette.grey2[1] },
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
