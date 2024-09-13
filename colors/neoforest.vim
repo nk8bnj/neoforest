@@ -204,7 +204,7 @@ if has('nvim')
     call neoforest#highlight('DiagnosticUnderlineHint', s:palette.none, s:palette.bg_green, 'undercurl', s:palette.green)
   else
     call neoforest#highlight('DiagnosticError', s:palette.red, s:palette.none)
-    call neoforest#highlight('DiagnosticUnderlineError', s:palette.red, s:palette.none, 'undercurl', s:palette.red)
+    call neoforest#highlight('DiagnosticUnderlineError', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
     call neoforest#highlight('DiagnosticWarn', s:palette.yellow, s:palette.none)
     call neoforest#highlight('DiagnosticUnderlineWarn', s:palette.none, s:palette.none, 'undercurl', s:palette.yellow)
     call neoforest#highlight('DiagnosticInfo', s:palette.blue, s:palette.none)
