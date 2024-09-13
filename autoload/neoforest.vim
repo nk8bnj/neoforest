@@ -133,7 +133,7 @@ function! neoforest#get_palette(background, colors_override) "{{{
           \ 'purple':     ['#D182D8',   '175'],
           \ 'white':      ['#ffffff',   '175'],
           \ 'grey0':      ['#7a8478',   '243'],
-          \ 'grey1':      ['#ff0000',   '245'],
+          \ 'grey1':      ['#859389',   '245'],
           \ 'lightGrey':  ['#94A0A1',   '245'],
           \ 'lightYellow':['#EFBD58',   '245'],
           \ 'lightRed':   ['#EE6060',   '245'],
