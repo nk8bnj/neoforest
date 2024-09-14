@@ -2,7 +2,7 @@ local configuration = vim.fn["neoforest#get_configuration"]()
 local palette = vim.fn["neoforest#get_palette"](configuration.background, configuration.colors_override)
 
 if configuration.transparent_background == 2 then
-	palette.mainGrey = palette.none
+	palette.bg1 = palette.none
 end
 
 return {
