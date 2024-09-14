@@ -7,7 +7,7 @@ end
 
 return {
 	normal = {
-		a = { bg = palette.lightYellow[1], fg = palette.mainBlack[1], gui = "bold" },
+		a = { bg = palette.mainDarkGrey[1], fg = palette.lightYellow[1], gui = "bold" },
 		b = { bg = palette.bg3[1], fg = palette.grey2[1] },
 		c = { bg = palette.darkGrey[1], fg = palette.lightGrey[1] },
 	},
