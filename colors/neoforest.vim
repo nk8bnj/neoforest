@@ -1641,7 +1641,7 @@ if !s:configuration.transparent_background
   call neoforest#highlight('NvimTreeNormal', s:palette.fg, s:palette.bg_dim)
   call neoforest#highlight('NvimTreeEndOfBuffer', s:palette.bg_dim, s:palette.bg_dim)
   call neoforest#highlight('NvimTreeVertSplit', s:palette.bg0, s:palette.bg0)
-  call neoforest#highlight('NvimTreeCursorLine', s:palette.none, s:palette.bg0)
+  call neoforest#highlight('NvimTreeCursorLine', s:palette.bg1, s:palette.bg0)
 endif
 highlight! link NvimTreeSymlink Fg
 highlight! link NvimTreeFolderName Green
