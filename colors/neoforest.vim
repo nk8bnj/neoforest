@@ -1645,7 +1645,7 @@ if !s:configuration.transparent_background
 endif
 highlight! link NvimTreeSymlink Fg
 highlight! link NvimTreeFolderName Green
-highlight! link NvimTreeRootFolder Grey
+highlight! link NvimTreeRootFolder Red
 highlight! link NvimTreeFolderIcon Orange
 highlight! link NvimTreeEmptyFolderName Green
 highlight! link NvimTreeOpenedFolderName Green
@@ -1654,7 +1654,7 @@ highlight! link NvimTreeOpenedFile Fg
 highlight! link NvimTreeSpecialFile Fg
 highlight! link NvimTreeImageFile Fg
 highlight! link NvimTreeMarkdownFile Fg
-highlight! link NvimTreeIndentMarker Grey
+highlight! link NvimTreeIndentMarker Red
 highlight! link NvimTreeGitDirty Yellow
 highlight! link NvimTreeGitStaged Blue
 highlight! link NvimTreeGitMerge Orange
