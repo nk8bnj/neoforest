@@ -1648,7 +1648,7 @@ if !s:configuration.transparent_background
 endif
 highlight! link NvimTreeSymlink Fg
 highlight! link NvimTreeFolderName MainAqua
-highlight! link NvimTreeRootFolder Grey
+highlight! link NvimTreeRootFolder Red
 highlight! link NvimTreeFolderIcon LightGrey
 highlight! link NvimTreeEmptyFolderName MainAqua
 highlight! link NvimTreeOpenedFolderName MainAqua
