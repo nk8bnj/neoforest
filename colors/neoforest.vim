@@ -318,6 +318,7 @@ call neoforest#highlight('Grey', s:palette.grey1, s:palette.none)
 call neoforest#highlight('DarkGrey', s:palette.bg4, s:palette.none)
 call neoforest#highlight('LightGrey', s:palette.grey2, s:palette.none)
 call neoforest#highlight('MainAqua', s:palette.mainAqua, s:palette.none)
+call neoforest#highlight('LightOrange', s:palette.lightOrange, s:palette.none)
 call neoforest#highlight('Red', s:palette.red, s:palette.none, 'italic')
 call neoforest#highlight('Orange', s:palette.orange, s:palette.none)
 call neoforest#highlight('FolderBG', s:palette.statusline4, s:palette.none)
@@ -1648,7 +1649,7 @@ if !s:configuration.transparent_background
 endif
 highlight! link NvimTreeSymlink Fg
 highlight! link NvimTreeFolderName MainAqua
-highlight! link NvimTreeRootFolder Red
+highlight! link NvimTreeRootFolder lightOrange
 highlight! link NvimTreeFolderIcon LightGrey
 highlight! link NvimTreeEmptyFolderName MainAqua
 highlight! link NvimTreeOpenedFolderName MainAqua
