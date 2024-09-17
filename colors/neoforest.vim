@@ -316,6 +316,7 @@ call neoforest#highlight('Underlined', s:palette.none, s:palette.none, 'underlin
 call neoforest#highlight('Fg', s:palette.fg, s:palette.none)
 call neoforest#highlight('Grey', s:palette.grey1, s:palette.none)
 call neoforest#highlight('DarkGrey', s:palette.bg4, s:palette.none)
+call neoforest#highlight('LightGrey', s:palette.grey2, s:palette.none)
 call neoforest#highlight('Red', s:palette.red, s:palette.none, 'italic')
 call neoforest#highlight('Orange', s:palette.orange, s:palette.none)
 call neoforest#highlight('FolderBG', s:palette.statusline4, s:palette.none)
@@ -1647,7 +1648,7 @@ endif
 highlight! link NvimTreeSymlink Fg
 highlight! link NvimTreeFolderName Green
 highlight! link NvimTreeRootFolder Grey
-highlight! link NvimTreeFolderIcon Orange
+highlight! link NvimTreeFolderIcon LightGrey
 highlight! link NvimTreeEmptyFolderName Green
 highlight! link NvimTreeOpenedFolderName Green
 highlight! link NvimTreeExecFile Fg
