@@ -147,7 +147,7 @@ function! neoforest#get_palette(background, colors_override) "{{{
           \ 'mainAqua':   ['#60B8AD',   '142'],
           \ 'darkYellow': ['#C59C4A',   '214'],
           \ 'darkRed':    ['#B94B4B',   '214'],
-          \ 'darkBlue':   ['#3F9F92',   '214'],
+          \ 'darkBlue':   ['#43AC9F',   '214'],
           \ 'darkOrange': ['#CA7E5B',   '214'],
           \ 'statusline1':['#A9CD73',   '142'],
           \ 'statusline2':['#4DC5B6',   '223'],
