@@ -1647,7 +1647,7 @@ if !s:configuration.transparent_background
   call neoforest#highlight('NvimTreeVertSplit', s:palette.bg0, s:palette.bg0)
   call neoforest#highlight('NvimTreeCursorLine', s:palette.none, s:palette.bg1)
 endif
-highlight! link NvimTreeSymlink Fg
+highlight! link NvimTreeSymlink LightGrey
 highlight! link NvimTreeFolderName MainAqua
 highlight! link NvimTreeRootFolder lightOrange
 highlight! link NvimTreeFolderIcon LightGrey
