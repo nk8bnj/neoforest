@@ -1653,11 +1653,11 @@ highlight! link NvimTreeRootFolder lightOrange
 highlight! link NvimTreeFolderIcon LightGrey
 highlight! link NvimTreeEmptyFolderName MainAqua
 highlight! link NvimTreeOpenedFolderName MainAqua
-highlight! link NvimTreeExecFile Fg
-highlight! link NvimTreeOpenedFile Fg
-highlight! link NvimTreeSpecialFile Fg
-highlight! link NvimTreeImageFile Fg
-highlight! link NvimTreeMarkdownFile Fg
+highlight! link NvimTreeExecFile LightGrey
+highlight! link NvimTreeOpenedFile LightGrey
+highlight! link NvimTreeSpecialFile LightGrey
+highlight! link NvimTreeImageFile LightGrey
+highlight! link NvimTreeMarkdownFile LightGrey
 highlight! link NvimTreeIndentMarker DarkGrey
 highlight! link NvimTreeGitDirty Yellow
 highlight! link NvimTreeGitStaged Blue
