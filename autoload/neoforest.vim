@@ -141,7 +141,6 @@ function! neoforest#get_palette(background, colors_override) "{{{
           \ 'lightAqua'  :['#42A99D',   '245'],
           \ 'lightPurple':['#E187B2',   '245'],
           \ 'grey2':      ['#94A0A1',   '247'],
-
           \ 'mainGrey':   ['#899DA7',   '142'],
           \ 'mainBlack':  ['#22272D',   '142'],
           \ 'darkGrey':   ['#293035',   '142'],
