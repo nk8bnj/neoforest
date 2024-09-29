@@ -12,7 +12,7 @@ return {
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
 	insert = {
-		a = { bg = palette.bg1[1], fg = palette.lightGreen[1], gui = "bold" },
+		a = { bg = palette.bg1[1], fg = palette.green[1], gui = "bold" },
 		b = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
