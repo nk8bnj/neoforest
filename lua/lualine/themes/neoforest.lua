@@ -8,7 +8,7 @@ end
 return {
 	normal = {
 		a = { bg = palette.bg1[1], fg = palette.darkBlue[1], gui = "bold" },
-		b = { bg = palette.darkBlue[1], fg = palette.mainBlack[1] },
+		b = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 		c = { bg = palette.bg1[1], fg = palette.lightGrey[1] },
 	},
 	insert = {
