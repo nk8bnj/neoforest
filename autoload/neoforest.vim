@@ -60,7 +60,7 @@ function! neoforest#get_palette(background, colors_override) "{{{
       let palette1 = {
             \ 'bg_dim':     ['#2B353C',   '233'],
             \ 'bg0':        ['#2B353C',   '235'],
-            \ 'bg1':        ['#343f44',   '236'],
+            \ 'bg1':        ['#2E383D',   '236'],
             \ 'bg2':        ['#3d484d',   '237'],
             \ 'bg3':        ['#475258',   '238'],
             \ 'bg4':        ['#4f585e',   '239'],
