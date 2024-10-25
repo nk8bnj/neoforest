@@ -1900,7 +1900,7 @@ highlight! link rstTableLines Grey
 " builtin: http://www.drchip.org/astronaut/vim/index.html#SYNTAX_TEX {{{
 highlight! link texStatement Green
 highlight! link texOnlyMath Grey
-highlight! link texDefName Yellow
+highlight! link texDefName Red
 highlight! link texNewCmd Orange
 highlight! link texCmdName Blue
 highlight! link texBeginEnd Red
@@ -1930,7 +1930,7 @@ highlight! link texAuthorArg BlueItalic
 " builtin: https://notabug.org/jorgesumle/vim-html-syntax {{{
 call neoforest#highlight('htmlH1', s:palette.red, s:palette.none, 'bold')
 call neoforest#highlight('htmlH2', s:palette.orange, s:palette.none, 'bold')
-call neoforest#highlight('htmlH3', s:palette.red, s:palette.none, 'bold')
+call neoforest#highlight('htmlH3', s:palette.yellow, s:palette.none, 'bold')
 call neoforest#highlight('htmlH4', s:palette.green, s:palette.none, 'bold')
 call neoforest#highlight('htmlH5', s:palette.blue, s:palette.none, 'bold')
 call neoforest#highlight('htmlH6', s:palette.purple, s:palette.none, 'bold')
