@@ -1900,7 +1900,7 @@ highlight! link rstTableLines Grey
 " builtin: http://www.drchip.org/astronaut/vim/index.html#SYNTAX_TEX {{{
 highlight! link texStatement Green
 highlight! link texOnlyMath Grey
-highlight! link texDefName Red
+highlight! link texDefName Yellow
 highlight! link texNewCmd Orange
 highlight! link texCmdName Blue
 highlight! link texBeginEnd Red
@@ -2064,7 +2064,7 @@ highlight! link jsSuper Purple
 highlight! link jsPrototype Purple
 highlight! link jsFunction Keyword
 highlight! link jsGlobalNodeObjects Include
-highlight! link jsGlobalObjects Yellow
+highlight! link jsGlobalObjects Red
 highlight! link jsArrowFunction Purple
 highlight! link jsArrowFuncArgs Blue
 highlight! link jsFuncArgs Identifier
