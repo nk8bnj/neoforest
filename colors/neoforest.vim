@@ -291,7 +291,7 @@ call neoforest#highlight('Label', s:palette.orange, s:palette.none)
 call neoforest#highlight('Structure', s:palette.orange, s:palette.none)
 call neoforest#highlight('Operator', s:palette.orange, s:palette.none)
 call neoforest#highlight('Title', s:palette.orange, s:palette.none, 'bold')
-call neoforest#highlight('Special', s:palette.yellow, s:palette.none)
+call neoforest#highlight('Special', s:palette.red, s:palette.none)
 call neoforest#highlight('SpecialChar', s:palette.yellow, s:palette.none)
 call neoforest#highlight('Type', s:palette.yellow, s:palette.none)
 call neoforest#highlight('Function', s:palette.green, s:palette.none)
@@ -2064,7 +2064,7 @@ highlight! link jsSuper Purple
 highlight! link jsPrototype Purple
 highlight! link jsFunction Keyword
 highlight! link jsGlobalNodeObjects Include
-highlight! link jsGlobalObjects Red
+highlight! link jsGlobalObjects Yellow
 highlight! link jsArrowFunction Purple
 highlight! link jsArrowFuncArgs Blue
 highlight! link jsFuncArgs Identifier
