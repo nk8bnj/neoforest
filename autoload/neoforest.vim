@@ -58,7 +58,7 @@ function! neoforest#get_palette(background, colors_override) "{{{
   elseif a:background ==# 'medium' "{{{
     if &background ==# 'dark'
       let palette1 = {
-            \ 'bg_dim':     ['#2D353B',   '233'],
+            \ 'bg_dim':     ['#ff0000',   '233'],
             \ 'bg0':        ['#2D353B',   '235'],
             \ 'bg1':        ['#343f44',   '236'],
             \ 'bg2':        ['#3d484d',   '237'],
