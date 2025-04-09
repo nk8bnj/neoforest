@@ -44,7 +44,7 @@ else
   else
     call neoforest#highlight('NormalNC', s:palette.lightGrey, s:palette.bg0)
   endif
-  call neoforest#highlight('Terminal', s:palette.fg, s:palette.bg0)
+  call neoforest#highlight('Terminal', s:palette.fg, s:palette.red)
   if s:configuration.show_eob
     call neoforest#highlight('EndOfBuffer', s:palette.bg4, s:palette.none)
   else
