@@ -123,7 +123,7 @@ function! neoforest#get_palette(background, colors_override) "{{{
   if &background ==# 'dark' "{{{
     let palette2 = {
           \ 'fg':         ['#d3c6aa',   '223'],
-          \ 'red':        ['#EE6060',   '167'],
+          \ 'red':        ['#e67e80',   '167'],
           \ 'orange':     ['#F38E61',   '208'],
           \ 'yellow':     ['#EFBD58',   '214'],
           \ 'green':      ['#A9CD73',   '142'],
